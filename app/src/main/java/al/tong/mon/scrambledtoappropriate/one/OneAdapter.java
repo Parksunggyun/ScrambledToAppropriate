@@ -65,7 +65,7 @@ class OneAdapter extends RecyclerView.Adapter<OneAdapter.OneHolder> {
         this.height = length;
     }
 
-    void change(int oldPos, int newPos) {
+     Vector<One> change(int oldPos, int newPos) {
         //6, 9
         One oldOne = mOne.get(oldPos);
         One newOne = mOne.get(newPos);
@@ -74,6 +74,7 @@ class OneAdapter extends RecyclerView.Adapter<OneAdapter.OneHolder> {
         mOne.remove(oldPos);
         mOne.add(oldPos, newOne);
         notifyDataSetChanged();
+         return mOne;
     }
 
     Vector<One> currentOne() {
