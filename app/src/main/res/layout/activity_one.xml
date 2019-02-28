@@ -9,7 +9,6 @@
         tools:context=".one.OneActivity">
 
         <android.support.constraint.ConstraintLayout
-            android:background="@color/colorPrimary"
             android:id="@+id/oneLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -25,6 +24,16 @@
             android:id="@+id/oneViews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+            <android.support.v7.widget.AppCompatImageView
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:id="@+id/showCorrectImageView"
+                app:layout_constraintStart_toStartOf="@+id/oneViews"
+                app:layout_constraintEnd_toEndOf="@+id/oneViews"
+                app:layout_constraintTop_toTopOf="@+id/oneViews"
+                app:layout_constraintBottom_toBottomOf="@+id/oneViews"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
         </android.support.constraint.ConstraintLayout>
         <android.support.v7.widget.AppCompatImageView
             android:src="@drawable/img1to9"

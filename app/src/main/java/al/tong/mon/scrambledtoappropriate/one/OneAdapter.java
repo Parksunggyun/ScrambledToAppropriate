@@ -2,6 +2,7 @@ package al.tong.mon.scrambledtoappropriate.one;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,11 +21,7 @@ class OneAdapter extends RecyclerView.Adapter<OneAdapter.OneHolder> {
     private Context context;
 
     private int width = 0, height = 0;
-    int[] imgs = new int[]{
-        R.drawable.img1, R.drawable.img2, R.drawable.img3,
-                R.drawable.img4, R.drawable.img5, R.drawable.img6,
-                R.drawable.img7, R.drawable.img8, R.drawable.img9
-    };
+    Bitmap[] bitmaps = new Bitmap[9];
 
     public OneAdapter(Activity activity) {
         this.activity = activity;
@@ -46,8 +43,8 @@ class OneAdapter extends RecyclerView.Adapter<OneAdapter.OneHolder> {
             binding.itemCardView.getLayoutParams().height = height;
         }
         One one = mOne.get(position);
-        int image = one.getImage();
-        binding.itemCardView.setBackgroundResource(image);
+        Bitmap image = one.getImage();
+        binding.itemCardView.setImageBitmap(image);
     }
 
     @Override
@@ -82,7 +79,7 @@ class OneAdapter extends RecyclerView.Adapter<OneAdapter.OneHolder> {
     }
 
     void finish(int pos) {
-        mOne.get(pos).setImage(imgs[pos]);
+        mOne.get(pos).setImage(bitmaps[pos]);
         notifyItemChanged(pos);
     }
 

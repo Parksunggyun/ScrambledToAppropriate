@@ -1,18 +1,20 @@
 package al.tong.mon.scrambledtoappropriate.one;
 
+import android.graphics.Bitmap;
+
 public class One {
 
-    private int image;
+    private Bitmap image;
     private int tag;
     private boolean empty;
 
-    One(int image, int tag, boolean empty) {
+    One(Bitmap image, int tag, boolean empty) {
         this.image = image;
         this.tag = tag;
         this.empty = empty;
     }
 
-    public void setImage(int image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 
@@ -24,7 +26,7 @@ public class One {
         this.empty = empty;
     }
 
-    public int getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
